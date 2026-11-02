@@ -31,7 +31,7 @@ jobs:
 
       - name: Install Node Dependencies & Build Assets
         run: |
-          npm ci
+          npm install
           npm run build
 
       - name: Install Composer Dependencies (Production Only)
