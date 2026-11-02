@@ -1,0 +1,57 @@
+name: Build & Publish Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Package Release Archive
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring, xml, ctype, iconv, zip
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Node Dependencies & Build Assets
+        run: |
+          npm ci
+          npm run build
+
+      - name: Install Composer Dependencies (Production Only)
+        run: |
+          composer install --no-dev --prefer-dist --optimize-autoloader --no-progress
+
+      - name: Build Release Package
+        run: |
+          chmod +x bin/build-release.sh
+          ./bin/build-release.sh
+
+      - name: Create GitHub Release & Upload Asset
+        uses: softprops/action-gh-release@v2
+        with:
+          name: BotPlus AI Agents ${{ github.ref_name }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+          files: |
+            dist/botplus-ai-agents.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

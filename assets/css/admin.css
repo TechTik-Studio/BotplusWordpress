@@ -1,0 +1,258 @@
+/* BotPlus Admin CSS */
+.botplus-admin * {
+    box-sizing: border-box;
+}
+
+.botplus-admin {
+    /* BotPlus Unified Slate & Brand Blue Design Tokens */
+    --bp-brand-primary: #2563EB;
+    --bp-brand-hover: #1D4ED8;
+    --bp-brand-subtle: rgba(37, 99, 235, 0.08);
+    --bp-brand-border: #BFDBFE;
+
+    --bp-text-primary: #0F172A;
+    --bp-text-secondary: #334155;
+    --bp-text-muted: #64748B;
+    --bp-text-subtle: #94A3B8;
+
+    --bp-bg-page: #F8FAFC;
+    --bp-bg-card: #FFFFFF;
+    --bp-bg-subtle: #F1F5F9;
+
+    --bp-border: #E2E8F0;
+    --bp-border-hover: #CBD5E1;
+    --bp-border-focus: #2563EB;
+
+    --bp-status-success: #10B981;
+    --bp-status-warning: #F59E0B;
+    --bp-status-danger: #EF4444;
+
+    /* Legacy compatibility mappings */
+    --botplus-primary: var(--bp-brand-primary);
+    --botplus-primary-hover: var(--bp-brand-hover);
+    --botplus-primary-subtle: var(--bp-brand-subtle);
+    --botplus-primary-border: var(--bp-brand-border);
+    
+    --botplus-success: var(--bp-status-success);
+    --botplus-success-hover: #047857;
+    --botplus-success-subtle: rgba(16, 185, 129, 0.08);
+    --botplus-success-border: #A7F3D0;
+    
+    --botplus-warning: var(--bp-status-warning);
+    --botplus-warning-hover: #B45309;
+    --botplus-warning-subtle: rgba(245, 158, 11, 0.08);
+    --botplus-warning-border: #FDE68A;
+    
+    --botplus-danger: var(--bp-status-danger);
+    --botplus-danger-hover: #B91C1C;
+    --botplus-danger-subtle: rgba(239, 68, 68, 0.08);
+    --botplus-danger-border: #FECACA;
+
+    --botplus-text-main: var(--bp-text-primary);
+    --botplus-text-secondary: var(--bp-text-secondary);
+    --botplus-text-muted: var(--bp-text-muted);
+    --botplus-text-subtle: var(--bp-text-subtle);
+    
+    --botplus-bg-page: var(--bp-bg-page);
+    --botplus-bg-card: var(--bp-bg-card);
+    --botplus-bg-subtle: var(--bp-bg-subtle);
+    
+    --botplus-border: var(--bp-border);
+    --botplus-border-subtle: var(--bp-border);
+    --botplus-border-focus: var(--bp-border-focus);
+    
+    --botplus-radius-xs: 4px;
+    --botplus-radius-sm: 6px;
+    --botplus-radius-md: 8px;
+    --botplus-radius-lg: 12px;
+    --botplus-radius-badge: 4px;
+    --botplus-radius-badge-lg: 6px;
+    
+    --botplus-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+    --botplus-shadow-card: 0 1px 3px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.03);
+    --botplus-shadow-hover: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+@keyframes botplus-shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.botplus-shimmer-effect {
+    background: linear-gradient(90deg, #F1F5F9 25%, #E2E8F0 50%, #F1F5F9 75%);
+    background-size: 200% 100%;
+    animation: botplus-shimmer 1.6s infinite ease-in-out;
+}
+
+/* ==========================================================================
+   Modern Dropdown Selects (Custom Chevron & Symmetrical Heights)
+   ========================================================================== */
+.botplus-admin select,
+.botplus-select,
+.botplus-period-select,
+.botplus-status-select,
+select.botplus-input {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    display: inline-flex;
+    align-items: center;
+    height: 36px;
+    padding: 0 34px 0 12px !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    line-height: 34px !important;
+    color: #334155 !important;
+    background-color: #FFFFFF !important;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 10px center !important;
+    background-size: 14px 14px !important;
+    border: 1px solid #CBD5E1 !important;
+    border-radius: 6px !important;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04) !important;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+.botplus-admin select:hover,
+.botplus-select:hover,
+.botplus-period-select:hover,
+.botplus-status-select:hover,
+select.botplus-input:hover {
+    border-color: #94A3B8 !important;
+    background-color: #F8FAFC !important;
+}
+
+.botplus-admin select:focus,
+.botplus-select:focus,
+.botplus-period-select:focus,
+.botplus-status-select:focus,
+select.botplus-input:focus {
+    outline: none !important;
+    border-color: #2563EB !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15) !important;
+    background-color: #FFFFFF !important;
+}
+
+/* ==========================================================================
+   Modern Sharp Badges (Strict "No Pills" Standard)
+   ========================================================================== */
+.botplus-badge,
+.botplus-status-pill,
+.botplus-intent-badge,
+.botplus-cart-status,
+.botplus-stat-pill {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    padding: 3px 8px !important;
+    border-radius: 4px !important; /* Replaces 9999px pill */
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+    letter-spacing: 0.02em !important;
+    text-transform: uppercase !important;
+    border: 1px solid transparent !important;
+    white-space: nowrap !important;
+}
+
+/* Badge Color Themes */
+.botplus-badge-primary,
+.botplus-status-pill.is-active,
+.botplus-status-pill.active,
+.botplus-status-pill.highlight,
+.botplus-intent-badge.high {
+    background: #EFF6FF !important;
+    color: #1D4ED8 !important;
+    border-color: #BFDBFE !important;
+}
+
+.botplus-badge-success,
+.botplus-status-pill.open,
+.botplus-status-pill.resolved,
+.botplus-cart-status.recovered,
+.botplus-intent-badge.medium {
+    background: #ECFDF5 !important;
+    color: #047857 !important;
+    border-color: #A7F3D0 !important;
+}
+
+.botplus-badge-warning,
+.botplus-status-pill.waiting,
+.botplus-status-pill.needs_intervention,
+.botplus-cart-status.in_flight {
+    background: #FFFBEB !important;
+    color: #B45309 !important;
+    border-color: #FDE68A !important;
+}
+
+.botplus-badge-danger,
+.botplus-status-pill.cancelled,
+.botplus-status-pill.error,
+.botplus-cart-status.abandoned {
+    background: #FEF2F2 !important;
+    color: #B91C1C !important;
+    border-color: #FECACA !important;
+}
+
+.botplus-badge-purple,
+.botplus-status-pill.ai-auto {
+    background: #F5F3FF !important;
+    color: #6D28D9 !important;
+    border-color: #DDD6FE !important;
+}
+
+.botplus-badge-neutral,
+.botplus-status-pill.closed {
+    background: #F1F5F9 !important;
+    color: #475569 !important;
+    border-color: #CBD5E1 !important;
+}
+
+/* Minimal Status Indicator Dot */
+.bp-status-dot,
+.botplus-pulse-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+.bp-status-dot.is-success { background-color: #10B981; }
+.bp-status-dot.is-warning { background-color: #F59E0B; }
+.bp-status-dot.is-danger { background-color: #EF4444; }
+.bp-status-dot.is-neutral { background-color: #94A3B8; }
+
+/* ==========================================================================
+   Metric Cards (Consistent Monochromatic Visual Hierarchy)
+   ========================================================================== */
+.botplus-metric-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px !important;
+    border: 1px solid #E2E8F0 !important;
+    background: #FFFFFF !important;
+    padding: 20px 22px !important;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04) !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.botplus-metric-card:hover {
+    box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.06), 0 2px 4px -2px rgba(15, 23, 42, 0.04) !important;
+}
+
+.botplus-metric-card.accent-primary,
+.botplus-metric-card.accent-success,
+.botplus-metric-card.accent-warning,
+.botplus-metric-card.accent-purple,
+.botplus-metric-card.accent-cyan {
+    border-top: 3px solid #2563EB !important;
+}

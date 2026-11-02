@@ -1,0 +1,50 @@
+/* BotPlus Widget CSS - Minimal, scoped styles */
+.botplus-widget * {
+    box-sizing: border-box;
+}
+
+.botplus-widget {
+    --botplus-primary: #3B82F6;
+    --botplus-primary-hover: #2563eb;
+    --botplus-bg: #ffffff;
+    --botplus-text: #111827;
+    --botplus-text-secondary: #6b7280;
+    --botplus-border: #e5e7eb;
+    --botplus-user-bg: #3B82F6;
+    --botplus-user-text: #ffffff;
+    --botplus-assistant-bg: #f3f4f6;
+    --botplus-assistant-text: #111827;
+}
+
+/* Theme variations */
+.botplus-widget[data-theme="glass"] {
+    --botplus-bg: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+}
+
+.botplus-widget[data-theme="timeless"] {
+    --botplus-primary: #1f2937;
+    --botplus-primary-hover: #111827;
+}
+
+.botplus-widget[data-theme="messages"] {
+    --botplus-user-bg: #007AFF;
+    --botplus-assistant-bg: #e5e5ea;
+}
+
+.botplus-widget[data-theme="foundation"] {
+    --botplus-primary: #000000;
+    --botplus-primary-hover: #333333;
+    --botplus-border: #000000;
+}
+
+/* Position variations */
+.botplus-widget[data-position="bottom-left"] {
+    right: auto;
+    left: 20px;
+}
+
+.botplus-widget[data-position="bottom-left"] .botplus-chat-window {
+    right: auto;
+    left: 0;
+}

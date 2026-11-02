@@ -1,0 +1,40 @@
+# Dependencies
+vendor/
+node_modules/
+
+# Build output
+build/
+*.min.js
+*.min.css
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+error_log
+
+# Testing
+.phpunit.result.cache
+coverage/
+
+# Cache
+.php-cs-fixer.cache
+.phpstan.cache
+
+# WordPress
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/backup-*/

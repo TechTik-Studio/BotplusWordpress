@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="tests/bootstrap.php" colors="true">
+    <testsuites>
+        <testsuite name="Unit">
+            <directory>tests/unit</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory>includes</directory>
+        </whitelist>
+    </filter>
+    <php>
+        <env name="WP_TESTS_DOMAIN" value="wp.test"/>
+        <env name="WP_TESTS_EMAIL" value="admin@wp.test"/>
+        <env name="WP_TESTS_TITLE" value="Test Blog"/>
+        <env name="WP_TESTS_PHP_BINARY" value="php"/>
+        <env name="BOTPLUS_API_URL" value="https://plaything-venomous-mardi.ngrok-free.dev"/>
+    </php>
+</phpunit>
