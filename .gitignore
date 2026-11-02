@@ -38,3 +38,6 @@ coverage/
 wp-content/uploads/
 wp-content/upgrade/
 wp-content/backup-*/
+# Distribution archives
+dist/
+
